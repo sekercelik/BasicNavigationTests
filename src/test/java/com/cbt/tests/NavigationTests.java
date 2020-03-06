@@ -43,6 +43,7 @@ public static void chromeTest(){
         driver.quit();
 
     }
+//*************************************************************************
 
     public static void EdgeTest(){
         WebDriver driver= BrowserFactory.getDriver("edge");
