@@ -1,5 +1,6 @@
 package com.cbt.utilities;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import java.util.*;
 
@@ -11,26 +12,36 @@ public class TitleVerification {
                 "http://practice.cybertekschool.com/login");
 
 
-        Set<String> title= new HashSet<>();
+       Set<String> titles = new HashSet<>();
 
-        WebDriver driver= BrowserFactory.getDriver("chrome");
-        for (int i = 0; i < urls.size(); i++) {
-            driver.get(urls.get(i));
-            title.add(driver.getTitle());
-            System.out.println("title: " + title);
+        WebDriver driver = BrowserFactory.getDriver("chrome");
+        for (String url : urls) {
+
+            driver.get(url);
+            titles.add(driver.getTitle());
+
+
         }
+            if(titles.size()==1){
+                System.out.println("Test passed: all titles are same");
+            }else {
+                System.out.println("test failed");
+            }
+
+
+
             for(String url : urls){
-                if(driver.getCurrentUrl().startsWith("http://practice.cybertekschool.com")){
-                    System.out.println("passed==> "+ driver.getCurrentUrl() + " starts with \"http://practice.cybertekschool.com\"");
+                if(url.startsWith("http://practice.cybertekschool.com")){
+                    System.out.println("passed==> "+ url + " starts with \"http://practice.cybertekschool.com\"");
                 }else{
                     System.out.println("failed ");
                 }
             }
 
 
-        driver.quit();
+            driver.quit();
 
 
         }
-        }
+    }
 
