@@ -25,7 +25,7 @@ public class TitleVerification {
             if(titles.size()==1){
                 System.out.println("Test passed: all titles are same");
             }else {
-                System.out.println("test failed");
+                System.out.println("test failed: all titles are not same");
             }
 
 
