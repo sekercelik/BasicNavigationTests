@@ -5,7 +5,7 @@ import com.google.gson.internal.bind.util.ISO8601Utils;
 public class StringUtility {
 
 public static void verifyEquals(String actual, String expected){
-    if(actual.equals(expected)){
+        if(actual.equals(expected)){
         System.out.println("PASS");
     }else{
         System.out.println("FAIL");
